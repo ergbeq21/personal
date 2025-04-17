@@ -1,4 +1,3 @@
-
 <script>
     let {data, form} = $props();
  </script>
@@ -8,7 +7,7 @@
 
 <div class="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-black py-12 px-4 sm:px-6 lg:px-8">
     <div class="max-w-3xl mx-auto">
-        <div class="text-center mb-12">
+        <div class="text-center mb-12 pt-16 sm:pt-20 lg:pt-0">
             <h1 class="text-4xl font-bold text-white mb-4">
                 <span class="text-orange-500">Get</span> in Touch
             </h1>

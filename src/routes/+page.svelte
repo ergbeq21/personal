@@ -20,17 +20,15 @@
                 currentIndex++;
             } else {
                 clearInterval(typingInterval);
-                // After typing is complete, wait a bit then start fade out
                 setTimeout(() => {
                     showInitialName = false;
-                    // After initial name disappears, show the main content
                     setTimeout(() => {
                         showContent = true;
                         isLoaded = true;
-                    }, 200); // Reduced delay for smoother transition
-                }, 2000); // Longer display time
+                    }, 200);
+                }, 2000);
             }
-        }, 200); // Slower typing speed for more elegance
+        }, 200);
     });
 </script>
 
@@ -39,7 +37,7 @@
     {#if showInitialName}
         <div class="fixed inset-0 flex items-center justify-center z-[100] initial-name bg-[#1f1f1f]">
             <div class="relative">
-                <h1 class="text-[250px] font-bold tracking-tighter typing-animation">
+                <h1 class="text-[150px] sm:text-[200px] md:text-[250px] font-bold tracking-tighter typing-animation">
                     <span class="text-gradient-white">{typedText}</span>
                     <span class="cursor">|</span>
                 </h1>
@@ -48,12 +46,12 @@
         </div>
     {/if}
 
-    <!-- Main Content (hidden until initial animation completes) -->
+    <!-- Main Content -->
     <div class="transition-opacity duration-300" class:opacity-0={!showContent}>
         <!-- Background gradient -->
         <div class="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-transparent pointer-events-none"></div>
 
-        <main class="relative min-h-screen flex flex-col lg:flex-row items-center justify-between p-8 lg:p-20 gap-9 overflow-hidden">
+        <main class="relative min-h-screen flex flex-col lg:flex-row items-center justify-between p-4 sm:p-6 md:p-8 lg:p-20 gap-6 md:gap-8 lg:gap-9 overflow-hidden">
             <!-- Social Links with Vertical Line -->
             <div class="relative z-10 hidden lg:flex flex-col items-center">
                 <div class="w-[1px] h-32 bg-gradient-to-b from-transparent via-orange-500/50 to-transparent mb-6"></div>
@@ -87,32 +85,32 @@
             </div>
 
             <!-- Main Content -->
-            <div class="flex-1 text-white z-10" class:fade-in={isLoaded} bind:this={textContent}>
+            <div class="flex-1 text-white z-10 text-center lg:text-left pt-16 sm:pt-20 lg:pt-0" class:fade-in={isLoaded} bind:this={textContent}>
                 <div class="slide-up">
-                    <p class="flex items-center gap-2 text-lg font-light mb-4">
-                        <Minus size="30" class="text-orange-500"/> 
+                    <p class="flex items-center justify-center lg:justify-start gap-2 text-base sm:text-lg font-light mb-4">
+                        <Minus size="24" class="text-orange-500"/> 
                         <span class="text-gray-400">Hello there, I am</span>
                     </p>
                 </div>
                 
                 <div class="slide-up" style="animation-delay: 200ms">
-                    <h1 class="text-8xl lg:text-[150px] font-bold leading-none tracking-tighter mb-2">
+                    <h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-[150px] font-bold leading-none tracking-tighter mb-2">
                         <span class="text-gradient-white">Ergit</span>
                     </h1>
                 </div>
                 
                 <div class="slide-up" style="animation-delay: 400ms">
-                    <h1 class="text-8xl lg:text-[150px] font-bold leading-none tracking-tighter">
+                    <h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-[150px] font-bold leading-none tracking-tighter">
                         <span class="text-gradient-orange">Beqiri</span>
                     </h1>
                 </div>
 
                 <div class="slide-up" style="animation-delay: 600ms">
-                    <p class="text-xl text-gray-400 mt-6">Full stack developer with a deep connection with Svelte</p>
+                    <p class="text-lg sm:text-xl text-gray-400 mt-4 sm:mt-6">Full stack developer with a deep connection with Svelte</p>
                 </div>
 
                 <div class="slide-up" style="animation-delay: 800ms">
-                    <div class="mt-8 flex gap-6">
+                    <div class="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start">
                         <a 
                             href="/contact" 
                             class="group relative px-6 py-3 bg-white text-black rounded-lg overflow-hidden hover:scale-105 transition-all duration-300"
@@ -132,11 +130,11 @@
 
             <!-- Image Section -->
             <div 
-                class="relative flex-1 flex justify-center items-center z-10 fade-in-delay" 
+                class="relative flex-1 flex justify-center items-center z-10 fade-in-delay mt-8 lg:mt-0" 
                 style="animation-delay: 1000ms"
                 bind:this={imageContent}
             >
-                <div class="relative group w-full max-w-lg">
+                <div class="relative group w-full max-w-sm sm:max-w-md md:max-w-lg">
                     <!-- Main Image Container -->
                     <div class="relative overflow-hidden rounded-2xl bg-black/20 backdrop-blur-sm">
                         <!-- Image -->
@@ -158,23 +156,23 @@
                     <div class="absolute -inset-4 bg-gradient-to-br from-orange-500/5 via-transparent to-transparent rounded-3xl blur-2xl group-hover:from-orange-500/10 transition-all duration-500"></div>
                     
                     <!-- Decorative Elements -->
-                    <div class="absolute -top-2 -right-2 w-24 h-24 bg-orange-500/5 rounded-full blur-xl"></div>
-                    <div class="absolute -bottom-2 -left-2 w-32 h-32 bg-orange-500/5 rounded-full blur-xl"></div>
+                    <div class="absolute -top-2 -right-2 w-16 sm:w-24 h-16 sm:h-24 bg-orange-500/5 rounded-full blur-xl"></div>
+                    <div class="absolute -bottom-2 -left-2 w-20 sm:w-32 h-20 sm:h-32 bg-orange-500/5 rounded-full blur-xl"></div>
                 </div>
             </div>
 
             <!-- Mobile Social Links -->
-            <div class="flex lg:hidden justify-center gap-6 mt-6">
-                <a href="/" class="text-white hover:text-orange-500 transition-colors duration-300">
+            <div class="flex lg:hidden justify-center gap-6 mt-8">
+                <a href="/" class="transform hover:scale-110 transition-all duration-300 text-white hover:text-orange-500">
                     <Linkedin size={24} />
                 </a>
-                <a href="/" class="text-white hover:text-orange-500 transition-colors duration-300">
+                <a href="/" class="transform hover:scale-110 transition-all duration-300 text-white hover:text-orange-500">
                     <Instagram size={24} />
                 </a>
-                <a href="/" class="text-white hover:text-orange-500 transition-colors duration-300">
+                <a href="/" class="transform hover:scale-110 transition-all duration-300 text-white hover:text-orange-500">
                     <Facebook size={24} />
                 </a>
-                <a href="/" class="text-white hover:text-orange-500 transition-colors duration-300">
+                <a href="/" class="transform hover:scale-110 transition-all duration-300 text-white hover:text-orange-500">
                     <Github size={24} />
                 </a>
             </div>

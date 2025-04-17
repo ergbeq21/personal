@@ -42,7 +42,7 @@
 <div class="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-black py-12 px-4 sm:px-6 lg:px-8">
 	<div class="max-w-7xl mx-auto">
 		<!-- Header Section -->
-		<div class="text-center mb-16">
+		<div class="text-center mb-16 pt-16 sm:pt-20 lg:pt-0">
 			<h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
 				My <span class="text-orange-500">Projects</span>
 			</h1>
@@ -52,7 +52,7 @@
 		</div>
 
 		<!-- Projects Grid -->
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
 			{#each projects as project}
 				<div class="group relative overflow-hidden rounded-xl bg-gray-800/50 border border-gray-700/50 hover:border-orange-500/50 transition-all duration-300 backdrop-blur-sm">
 					<div class="relative h-64 overflow-hidden">
@@ -95,7 +95,7 @@
 		</div>
 
 		<!-- Contact CTA -->
-		<div class="mt-20 text-center">
+		<div class="text-center">
 			<h2 class="text-3xl font-bold text-white mb-4">Interested in working together?</h2>
 			<p class="text-gray-400 mb-8">Let's create something amazing together.</p>
 			<a 
