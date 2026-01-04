@@ -1,11 +1,6 @@
 <script>
-	import '../../../src/app.css';
 	let { children } = $props();
 
-	import insta from '$lib/assets/insta.png';
-	import api from '$lib/assets/api.png';
-	import event from '$lib/assets/event.png';
-	import botschaft from '$lib/assets/qr.png';
 
 	let projects = [
 		{

@@ -3,51 +3,13 @@
     import { Linkedin, Instagram, Facebook, Github, Minus } from 'lucide-svelte';
     import foto from '$lib/assets/foto.png';
 
-    let isLoaded = false;
-    let showInitialName = true;
-    let showContent = false;
-    let textContent;
-    let imageContent;
-    let typedText = '';
-    const fullText = 'ERGIT';
-    let currentIndex = 0;
-
-    onMount(() => {
-        // Typing animation
-        const typingInterval = setInterval(() => {
-            if (currentIndex < fullText.length) {
-                typedText += fullText[currentIndex];
-                currentIndex++;
-            } else {
-                clearInterval(typingInterval);
-                setTimeout(() => {
-                    showInitialName = false;
-                    setTimeout(() => {
-                        showContent = true;
-                        isLoaded = true;
-                    }, 200);
-                }, 2000);
-            }
-        }, 200);
-    });
 </script>
 
 <div class="relative min-h-screen bg-[#1f1f1f] overflow-hidden">
-    <!-- Initial Name Animation -->
-    {#if showInitialName}
-        <div class="fixed inset-0 flex items-center justify-center z-[100] initial-name bg-[#1f1f1f]">
-            <div class="relative">
-                <h1 class="text-[150px] sm:text-[200px] md:text-[250px] font-bold tracking-tighter typing-animation">
-                    <span class="text-gradient-white">{typedText}</span>
-                    <span class="cursor">|</span>
-                </h1>
-                <div class="absolute -inset-4 bg-orange-500/5 blur-3xl rounded-full"></div>
-            </div>
-        </div>
-    {/if}
+
 
     <!-- Main Content -->
-    <div class="transition-opacity duration-300" class:opacity-0={!showContent}>
+    <div class="transition-opacity duration-300">
         <!-- Background gradient -->
         <div class="absolute inset-0 bg-gradient-to-br from-orange-500/5 via-transparent to-transparent pointer-events-none"></div>
 
@@ -85,7 +47,7 @@
             </div>
 
             <!-- Main Content -->
-            <div class="flex-1 text-white z-10 text-center lg:text-left pt-16 sm:pt-20 lg:pt-0" class:fade-in={isLoaded} bind:this={textContent}>
+            <div class="flex-1 text-white z-10 text-center lg:text-left pt-16 sm:pt-20 lg:pt-0 fade-in">
                 <div class="slide-up">
                     <p class="flex items-center justify-center lg:justify-start gap-2 text-base sm:text-lg font-light mb-4">
                         <Minus size="24" class="text-orange-500"/> 
@@ -132,7 +94,6 @@
             <div 
                 class="relative flex-1 flex justify-center items-center z-10 fade-in-delay mt-8 lg:mt-0" 
                 style="animation-delay: 1000ms"
-                bind:this={imageContent}
             >
                 <div class="relative group w-full max-w-sm sm:max-w-md md:max-w-lg">
                     <!-- Main Image Container -->
@@ -209,26 +170,6 @@
         opacity: 0;
         transform: translateY(20px);
         animation: slideUp 0.8s ease forwards;
-    }
-
-    .initial-name {
-        animation: fadeOut 1.5s ease forwards;
-    }
-
-    .typing-animation {
-        position: relative;
-        text-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
-    }
-
-    .cursor {
-        display: inline-block;
-        width: 4px;
-        margin-left: 2px;
-        animation: blink 1s step-end infinite;
-        background: linear-gradient(to bottom, #ffffff, #a3a3a3);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
     }
 
     @keyframes fadeIn {

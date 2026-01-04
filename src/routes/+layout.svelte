@@ -33,15 +33,8 @@
 </nav>
 
 
-	{@render children()}
+{@render children()}
 
-
-<style>
-	/* Add smooth scrolling to the whole page */
-	:global(html) {
-		scroll-behavior: smooth;
-	}
-</style>
 
 
 
