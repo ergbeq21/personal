@@ -1,7 +1,44 @@
 <script>
-    import { onMount } from 'svelte';
     import { Linkedin, Instagram, Facebook, Github, Minus } from 'lucide-svelte';
     import foto from '$lib/assets/foto.png';
+
+
+    import api from '$lib/assets/api.png';
+	import event from '$lib/assets/api.png';
+	import botschaft from '$lib/assets/api.png';
+	import insta from '$lib/assets/api.png';
+
+
+	let projects = [
+		{
+			title: "Instagram Clone",
+			description: "A modern Instagram clone built with the latest web technologies, featuring real-time updates and responsive design.",
+			image: insta,
+			link: "https://insta-gules-delta.vercel.app/",
+			tags: ["Node.js", "Svelte", "Tailwind CSS"]
+		},
+		{
+			title: "Event Management App",
+			description: "A comprehensive event management platform for organizing and tracking events, with QR code integration.",
+			image: event,
+			link: "https://event-app-seven-nu.vercel.app/",
+			tags: ["Svelte", "TypeScript", "SvelteKit"]
+		},
+		{
+			title: "Botschaft Platform",
+			description: "An innovative communication platform designed for seamless interaction and message management.",
+			image: botschaft,
+			link: "https://botschaft.vercel.app/",
+			tags: ["React", "Node.js", "WebSocket"]
+		},
+		{
+			title: "Restaurants API",
+			description: "A robust API service providing detailed information about restaurants in Shkodra, Albania.",
+			image: api,
+			link: "https://restaurants-api-rho.vercel.app/",
+			tags: ["API", "Express", "MongoDB"]
+		}
+	];
 
 </script>
 
