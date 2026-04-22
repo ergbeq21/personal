@@ -1,5 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+
+@layer base {
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		@apply bg-base font-sans text-primary antialiased;
+		font-feature-settings:
+			'ss01' on,
+			'cv02' on,
+			'cv03' on;
+		background-image:
+			radial-gradient(circle at 20% 0%, rgba(95, 168, 255, 0.1), transparent 28%),
+			linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+		background-size:
+			auto,
+			56px 56px,
+			56px 56px;
+		background-position:
+			center top,
+			center,
+			center;
+	}
+
+	::selection {
+		background: rgba(95, 168, 255, 0.24);
+		color: #eaf1ff;
+	}
+
+	:focus-visible {
+		outline: 2px solid rgba(95, 168, 255, 0.9);
+		outline-offset: 2px;
+	}
+}
+
+@layer components {
+	.section-anchor {
+		@apply pointer-events-none absolute bottom-0 left-0 top-0 w-px bg-gradient-to-b from-transparent via-accent/40 to-transparent;
+	}
+
+	.editorial-label {
+		@apply font-mono text-[11px] uppercase tracking-[0.22em] text-accent;
+	}
+}
