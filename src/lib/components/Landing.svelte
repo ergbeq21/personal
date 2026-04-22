@@ -53,11 +53,7 @@
 					class="group inline-flex items-center gap-2 rounded-lg border border-stroke bg-white/[0.02] px-5 py-2.5 text-sm font-medium text-secondary transition-all duration-200 ease-premium hover:-translate-y-0.5 hover:border-accent/35 hover:text-primary"
 				>
 					Start a Conversation
-					<span
-						class="font-mono text-xs transition-transform duration-200 group-hover:translate-x-1"
-					>
-						-&gt;
-					</span>
+			
 				</button>
 			</div>
 
@@ -92,11 +88,6 @@
 				</div>
 			</div>
 
-			<div class="absolute -left-16 top-14 hidden lg:block">
-				<p class="font-mono text-[10px] uppercase tracking-[0.24em] text-muted">Start Here</p>
-				<div class="mt-2 h-px w-14 bg-accent/40"></div>
-				<p class="mt-2 font-mono text-lg text-accent">↓</p>
-			</div>
 		</div>
 	</div>
 

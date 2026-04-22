@@ -8,7 +8,7 @@
 	import {
 		Building2,
 		Sofa,
-		X,
+		SquareDashedKanban,
 		Camera,
 		Grid2x2,
 		ArrowUpRight,
@@ -25,7 +25,7 @@
 			icon: Building2,
 			year: '2026',
 			index: '01',
-			stack: ['SvelteKit', 'Supabase', 'PostgreSQL', 'Resend', 'TailwindCSS'],
+			stack: ['SvelteKit', 'Supabase', 'PostgreSQL', 'Scaleway', 'Drizzle'],
 			link: 'https://www.securepass.at/',
 			featured: true
 		},
@@ -37,7 +37,7 @@
 			icon: Sofa,
 			year: '2026',
 			index: '02',
-			stack: ['Three.js', 'React', 'TypeScript', 'TailwindCSS'],
+			stack: ['Threlte', 'Svelte', 'Javascript', 'TailwindCSS'],
 			link: 'https://furniture-configurator-nine.vercel.app/'
 		},
 		{
@@ -45,10 +45,10 @@
 			desc: 'Task manager with drag-and-drop lanes and CSV export.',
 			image: kanban,
 			category: 'Productivity',
-			icon: X,
+			icon: SquareDashedKanban,
 			year: '2025',
 			index: '03',
-			stack: ['React', 'TypeScript', 'Zustand', 'TailwindCSS'],
+			stack: ['Svelte', 'Javascript', 'TailwindCSS'],
 			link: 'https://kanban-plum.vercel.app/'
 		},
 		{
@@ -59,7 +59,7 @@
 			icon: Camera,
 			year: '2025',
 			index: '04',
-			stack: ['Next.js', 'Supabase', 'Prisma', 'TailwindCSS'],
+			stack: ['Svelte','TailwindCSS'],
 			link: 'https://insta-gules-delta.vercel.app/'
 		},
 		{
@@ -70,7 +70,7 @@
 			icon: Grid2x2,
 			year: '2024',
 			index: '05',
-			stack: ['React', 'CSS Modules'],
+			stack: ['React'],
 			link: 'https://react-tic-tac-toe-phi-wheat.vercel.app/'
 		}
 	];
